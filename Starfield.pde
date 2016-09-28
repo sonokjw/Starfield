@@ -9,7 +9,7 @@ void setup()
 	{
 		if(i % 250 == 0)
 			group[i] = new JumboParticle();
-		else if(i % 2 == 0)
+		else if(i % 20 == 0)
 			group[i] = new OddballParticle();
 		else
 			group[i] = new NormalParticle();
