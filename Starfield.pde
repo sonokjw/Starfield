@@ -3,7 +3,7 @@ Particle [] group;
 void setup()
 {
 	//your code here
-	size(550, 550);
+	size(800, 800);
 	group = new Particle[2000];
 	for(int i = 0; i < group.length; i++)
 	{
@@ -25,6 +25,21 @@ void draw()
 		group[i].move();
 	}
 }
+
+void mousePressed()
+{
+	group = new Particle[2000];
+	for(int i = 0; i < group.length; i++)
+	{
+		if(i % 250 == 0)
+			group[i] = new JumboParticle();
+		else if(i % 20 == 0)
+			group[i] = new OddballParticle();
+		else
+			group[i] = new NormalParticle();
+	}
+}
+
 class NormalParticle implements Particle
 {
 	//your code here
@@ -32,8 +47,8 @@ class NormalParticle implements Particle
 	int myColor;
 	NormalParticle()
 	{
-		myX = 250;
-		myY = 250;
+		myX = mouseX;
+		myY = mouseY;
 		mySpeed = Math.random()*10-4;
 		myAngle = Math.random()*360;
 		myColor = color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
@@ -49,7 +64,7 @@ class NormalParticle implements Particle
 	{
 		myX = myX + mySpeed*cos((float)(myAngle));
 		myY = myY + mySpeed*sin((float)(myAngle));
-		myAngle+=0.02;
+		myAngle+=0.01;
 	}
 }
 
@@ -69,8 +84,8 @@ class OddballParticle implements Particle //uses an interface
 	int myColor;
 	OddballParticle()
 	{
-		myX = 250;
-		myY = 250;
+		myX = mouseX;
+		myY = mouseY;
 		mySpeed = Math.random()*10-4;
 		myAngle = Math.random()*360;
 		myColor = color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
@@ -85,7 +100,7 @@ class OddballParticle implements Particle //uses an interface
 	{
 		myX = myX + mySpeed*cos((float)(myAngle));
 		myY = myY + mySpeed*sin((float)(myAngle));
-		myAngle-=0.02;
+		myAngle-=0.005;
 	}
 }
 
