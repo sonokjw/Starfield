@@ -100,7 +100,7 @@ class OddballParticle implements Particle //uses an interface
 	{
 		myX = myX + mySpeed*cos((float)(myAngle));
 		myY = myY + mySpeed*sin((float)(myAngle));
-		myAngle-=0.005;
+		myAngle-=0.007;
 	}
 }
 
