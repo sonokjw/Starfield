@@ -94,7 +94,7 @@ class OddballParticle implements Particle //uses an interface
 	{
 		noStroke();
 		fill(myColor);
-		ellipse((float)(myX), (float)(myY), 2, 2);
+		rect((float)(myX), (float)(myY), 3, 3);
 	}
 	public void move()
 	{
