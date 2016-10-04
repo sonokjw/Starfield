@@ -3,8 +3,8 @@ Particle [] group;
 void setup()
 {
 	//your code here
-	size(800, 800);
-	group = new Particle[2000];
+	size(1000, 800);
+	group = new Particle[5000];
 	for(int i = 0; i < group.length; i++)
 	{
 		if(i % 250 == 0)
