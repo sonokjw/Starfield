@@ -1,5 +1,5 @@
 //your code here
-Particle [] group;
+ Particle [] group;
 void setup()
 {
 	//your code here
@@ -47,8 +47,8 @@ class NormalParticle implements Particle
 	int myColor;
 	NormalParticle()
 	{
-		myX = mouseX;
-		myY = mouseY;
+		myX = 500;
+		myY = 400;
 		mySpeed = Math.random()*10-4;
 		myAngle = Math.random()*360;
 		myColor = color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
@@ -84,8 +84,8 @@ class OddballParticle implements Particle //uses an interface
 	int myColor;
 	OddballParticle()
 	{
-		myX = mouseX;
-		myY = mouseY;
+		myX = Math.random()*800+100;
+		myY = Math.random()*800;
 		mySpeed = Math.random()*10-4;
 		myAngle = Math.random()*360;
 		myColor = color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
